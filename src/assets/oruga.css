@@ -1,0 +1,67 @@
+/*********************************
+           PAGINATION
+ *********************************/
+
+/* we need to wrap the whole o-pagination component inside a 
+ * container with a fixed width; the default just sets width: 100%
+ * and it'll take up a whole screen width if we let it
+ */
+.oruga-pagination-container {
+  width: 20vw;
+}
+
+nav.oruga-styled .o-pag__list {
+  justify-content: space-around;
+}
+
+/* all of the page numbers and everything is implemented
+ * in a > span > i tags. i really don't like this because
+ * it violates the "links should go somewhere, buttons should
+ * do things" principle. they set role="button" at least.
+ */
+nav.oruga-styled a {
+  text-decoration: none;
+  color: black;
+}
+
+/* we need to set heights and widths on both; the li ensures
+ * that the ... and < > elements are the same width as the page
+ * numbers, and the a ensures we can just change the background
+ * color of the active link.
+ *
+ * (unfortunately, the "active" classname is on the a tag and
+ * not the li. if we could use css4 :has() selectors this would
+ * be much cleaner)
+ */
+nav.oruga-styled li,
+nav.oruga-styled a {
+  height: 24px;
+  width: 24px;
+}
+
+nav.oruga-styled a.o-pag__link--current {
+  background-color: var(--r20-main-color);
+  color: white;
+}
+
+/* these only exist so that i don't have to hook up
+ * fontawesome for this demo. we won't be manually 
+ * setting ::before in production. the only thing that
+ * will make it through to production from here is the
+ * color: #e10085
+ */
+nav.oruga-styled i.mdi.mdi-chevron-left.mdi-24px::before {
+  content: "<";
+  height: 24px;
+  width: 24px;
+  color: var(--r20-main-color);
+  font-style: normal;
+}
+
+nav.oruga-styled i.mdi.mdi-chevron-right.mdi-24px::before {
+  content: ">";
+  height: 24px;
+  width: 24px;
+  color: var(--r20-main-color);
+  font-style: normal;
+}

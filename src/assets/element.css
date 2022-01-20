@@ -1,0 +1,15 @@
+/*********************************
+           PAGINATION
+ *********************************/
+.el-pagination.element-pagination-styled {
+  --el-pagination-button-width: 28px;
+}
+
+.el-pagination.element-pagination-styled button {
+  color: var(--r20-main-color);
+}
+
+.el-pagination.element-pagination-styled li.active.number {
+  background-color: var(--r20-main-color);
+  color: white;
+}

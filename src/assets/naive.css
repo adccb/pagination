@@ -1,0 +1,25 @@
+/*********************************
+           PAGINATION
+ *********************************/
+
+/* so the crappy part here is that naive ui is
+ * applying their styles pretty closely. the query
+ * they use is below; i just copied it for this. we 
+ * either need to slap a !important on all these 
+ * queries or we need to match their selectors. :(
+ */
+.naive-pagination-styled
+  .n-pagination-item:not(.n-pagination-item--disabled).n-pagination-item--active {
+  background: var(--r20-main-color);
+  color: white;
+  border: 1px var(--r20-main-color) solid;
+}
+
+.naive-pagination-styled .n-pagination-item.n-pagination-item--button {
+  border: none;
+}
+
+.naive-pagination-styled .n-pagination-item--button i {
+  color: var(--r20-main-color);
+  font-size: 1.2rem;
+}
